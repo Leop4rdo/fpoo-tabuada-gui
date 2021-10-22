@@ -2,7 +2,6 @@ package br.senai.sp.jandira.ui;
 
 import java.awt.Color;
 import java.awt.Font;
-import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -134,8 +133,9 @@ public class FrameTabuada extends JFrame{
 		}
 	}
 	
-	
 	private void btnLimparClickEvent() {
 		listResultado.setListData(new String[0]);
+		
+		txtMultiplicando.grabFocus();
 	}
 }
