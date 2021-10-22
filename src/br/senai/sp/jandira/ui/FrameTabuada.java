@@ -135,7 +135,6 @@ public class FrameTabuada extends JFrame{
 	
 	private void btnLimparClickEvent() {
 		listResultado.setListData(new String[0]);
-		
 		txtMultiplicando.grabFocus();
 	}
 }
