@@ -13,6 +13,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 import br.senai.sp.jandira.model.CalculadoraTabuada;
+import br.senai.sp.jandira.model.ListModelResultado;
 
 public class FrameTabuada extends JFrame{
 	private JLabel lblTitulo;
@@ -27,6 +28,7 @@ public class FrameTabuada extends JFrame{
 	private JButton btnLimpar;
 	
 	private JList<String> listResultado;
+	private ListModelResultado modelResultado;
 	
 	private JScrollPane listResultadoScrollPane;
 	
@@ -95,8 +97,10 @@ public class FrameTabuada extends JFrame{
 		lblResultado.setBounds(350, 125, 120, 20);
 		lblResultado.setFont(new Font("Sans Serif", Font.BOLD, 18));
 		lblResultado.setForeground(new Color(81, 143, 245));
-
-		listResultado = new JList<String>();
+		
+		modelResultado = new ListModelResultado();
+		
+		listResultado = new JList<String>(modelResultado);
 		listResultado.setFixedCellHeight(25);
 		listResultado.setFont(textFont);
 		
@@ -126,12 +130,13 @@ public class FrameTabuada extends JFrame{
 			CalculadoraTabuada calc = new CalculadoraTabuada();
 			calc.calcular(Integer.parseInt(txtMultiplicando.getText()), Integer.parseInt(txtMaxMultiplicador.getText()));
 			
-			listResultado.setListData(calc.getTabuada());
+			modelResultado.removeAllElements();
+			modelResultado.addArray(calc.getTabuada());
 		}
 	}
 	
 	private void btnLimparClickEvent() {
-		listResultado.setListData(new String[0]);
+		modelResultado.removeAllElements();
 		txtMultiplicando.grabFocus();
 	}
 }
