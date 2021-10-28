@@ -3,6 +3,7 @@ package br.senai.sp.jandira.ui;
 import java.awt.Color;
 import java.awt.Font;
 
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -94,9 +95,8 @@ public class FrameTabuada extends JFrame{
 		lblResultado.setBounds(350, 125, 120, 20);
 		lblResultado.setFont(new Font("Sans Serif", Font.BOLD, 18));
 		lblResultado.setForeground(new Color(81, 143, 245));
-		
+
 		listResultado = new JList<String>();
-		listResultado.setBounds(350, 150, 240, 260);
 		listResultado.setFixedCellHeight(25);
 		listResultado.setFont(textFont);
 		
