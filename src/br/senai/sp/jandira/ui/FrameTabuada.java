@@ -12,7 +12,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-import br.senai.sp.jandira.model.CalculadoraTabuada;
+import br.senai.sp.jandira.model.Tabuada;
 import br.senai.sp.jandira.model.ListModelResultado;
 
 public class FrameTabuada extends JFrame{
@@ -127,8 +127,8 @@ public class FrameTabuada extends JFrame{
 	
 	private void btnCalcularClickEvent() {
 		if (!txtMaxMultiplicador.getText().isBlank() && !txtMultiplicando.getText().isBlank() ) {
-			CalculadoraTabuada calc = new CalculadoraTabuada();
-			calc.calcular(Integer.parseInt(txtMultiplicando.getText()), Integer.parseInt(txtMaxMultiplicador.getText()));
+			Tabuada calc = new Tabuada();
+			calc.calcular(txtMultiplicando.getText(), txtMaxMultiplicador.getText());
 			
 			modelResultado.removeAllElements();
 			modelResultado.addArrayOfElements(calc.getTabuada());

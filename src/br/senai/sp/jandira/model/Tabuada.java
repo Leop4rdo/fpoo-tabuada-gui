@@ -1,9 +1,12 @@
 package br.senai.sp.jandira.model;
 
-public class CalculadoraTabuada {
+public class Tabuada {
 	private String[] tabuada;
 	
-	public void calcular(int multiplicando, int maxMultiplicador) {
+	public void calcular(String multiplicandoString, String maxMultiplicadorString) {
+		int multiplicando = Integer.parseInt(multiplicandoString);
+		int maxMultiplicador = Integer.parseInt(maxMultiplicadorString);
+		
 		tabuada = new String[maxMultiplicador + 1];
 		
 		for (int i = 0; i< tabuada.length; i++) {
