@@ -11,6 +11,8 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
+import br.senai.sp.jandira.model.CalculadoraTabuada;
+
 public class FrameTabuada extends JFrame{
 	private JLabel lblTitulo;
 	private JLabel lblMultiplicando;
@@ -121,15 +123,10 @@ public class FrameTabuada extends JFrame{
 	
 	private void btnCalcularClickEvent() {
 		if (!txtMaxMultiplicador.getText().isBlank() && !txtMultiplicando.getText().isBlank() ) {
-			String[] arr = new String[Integer.parseInt(txtMaxMultiplicador.getText()) + 1];
+			CalculadoraTabuada calc = new CalculadoraTabuada();
+			calc.calcular(Integer.parseInt(txtMultiplicando.getText()), Integer.parseInt(txtMaxMultiplicador.getText()));
 			
-			for (int i = 0; i< arr.length; i++) {
-				int resultado = Integer.parseInt(txtMultiplicando.getText()) * i;
-				
-				arr[i] = txtMultiplicando.getText() + " X " + i + " = " + resultado;
-			}
-			
-			listResultado.setListData(arr);
+			listResultado.setListData(calc.getTabuada());
 		}
 	}
 	
