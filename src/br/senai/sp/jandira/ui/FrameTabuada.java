@@ -131,7 +131,7 @@ public class FrameTabuada extends JFrame{
 			calc.calcular(Integer.parseInt(txtMultiplicando.getText()), Integer.parseInt(txtMaxMultiplicador.getText()));
 			
 			modelResultado.removeAllElements();
-			modelResultado.addArray(calc.getTabuada());
+			modelResultado.addArrayOfElements(calc.getTabuada());
 		}
 	}
 	
